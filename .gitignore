@@ -1,0 +1,29 @@
+# Python仮想環境
+Lib/
+Scripts/
+Include/
+share/
+pyvenv.cfg
+
+# Pythonキャッシュ
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# 環境設定
+.env
+.venv
+env/
+venv/
+
+# IDEファイル
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS固有
+.DS_Store
+Thumbs.db
