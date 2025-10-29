@@ -11,47 +11,102 @@ Webカメラで手の動きを検出し、マウス操作を行うプログラ�
 
 ## 必要な環境
 
-- Python 3.11
+- Python 3.7以上（Python 3.11推奨）
 - Webカメラ
 - Windows / macOS / Linux
 
-## セットアップ
+## セットアップ（初回のみ）
 
-### 1. リポジトリをクローン
+### 1. Pythonがインストールされているか確認
+
+```bash
+python --version
+```
+
+Python 3.7以上がインストールされていることを確認してください。
+
+### 2. リポジトリをクローン
 
 ```bash
 git clone git@github.com:Takio0304/hand-tacking-test.git
 cd hand-tacking-test
 ```
 
-### 2. 仮想環境を作成
+### 3. 仮想環境を作成
+
+Pythonの仮想環境を作成します（プロジェクト専用の独立した環境）。
 
 ```bash
-python -m venv hand_env
+python -m venv venv
 ```
 
-### 3. 仮想環境を有効化
+### 4. 仮想環境を有効化
+
+作成した仮想環境を有効化します。
 
 **Windows:**
 ```bash
-hand_env\Scripts\activate
+venv\Scripts\activate
 ```
 
 **macOS/Linux:**
 ```bash
-source hand_env/bin/activate
+source venv/bin/activate
 ```
 
-### 4. 依存パッケージをインストール
+仮想環境が有効化されると、コマンドプロンプトの先頭に `(venv)` と表示されます。
+
+### 5. 依存パッケージをインストール
+
+仮想環境内に必要なパッケージをインストールします。
 
 ```bash
 pip install -r requirements.txt
 ```
 
+これで、OpenCV、MediaPipe、PyAutoGUIなどの必要なライブラリがインストールされます。
+
 ## 実行方法
 
+### 初回実行または環境をリセットした後
+
+1. プロジェクトディレクトリに移動
+```bash
+cd hand-tacking-test
+```
+
+2. 仮想環境を有効化
+```bash
+# Windows
+venv\Scripts\activate
+
+# macOS/Linux
+source venv/bin/activate
+```
+
+3. プログラムを実行
 ```bash
 python hand_control.py
+```
+
+### 2回目以降の実行
+
+すでにセットアップが完了している場合は、仮想環境を有効化して実行するだけです。
+
+```bash
+# 仮想環境を有効化
+venv\Scripts\activate  # Windows
+# または
+source venv/bin/activate  # macOS/Linux
+
+# プログラムを実行
+python hand_control.py
+```
+
+### 仮想環境を終了する場合
+
+```bash
+deactivate
 ```
 
 ## 使い方
